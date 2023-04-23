@@ -26,7 +26,7 @@ O código fornecido realiza a leitura dos sensores e exibe as informações no d
 
 ## Como Executar o Projeto
 
-Para executar o projeto, siga os passos abaixo:
+Para executar o projeto, siga os passos abaixo [(Link simulação)](https://www.tinkercad.com/things/3VLIiHJQjDJ): 
 
 1. Faça a montagem do circuito de acordo com o esquema elétrico fornecido.
 2. Faça o upload do código para o Arduino UNO utilizando a IDE do Arduino.
