@@ -69,7 +69,7 @@ Código completo no arquivo [`main.ino`](https://github.com/devCaiqueWS/vinheiri
 
 ## Link do Vídeo Explicativo
 
-Um vídeo explicativo sobre o projeto pode ser encontrado neste [link](???)
+Um vídeo explicativo sobre o projeto pode ser encontrado neste [link](https://youtu.be/Uy7qmzroecA)
 
 ## Conclusão
 
