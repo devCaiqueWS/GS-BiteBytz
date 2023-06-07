@@ -35,7 +35,7 @@ Você precisará dos seguintes materiais:
 
 ## Esquema Elétrico
 
-![Esquema Elétrico]([circuit.png](https://github.com/devCaiqueWS/GS-BiteBytz/blob/main/circuit.png))
+![Esquema Elétrico]([circuit.png](circuit.png))
 
 ## Funcionamento
 
