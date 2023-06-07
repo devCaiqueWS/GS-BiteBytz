@@ -35,7 +35,7 @@ Você precisará dos seguintes materiais:
 
 ## Esquema Elétrico
 
-![Esquema Elétrico]([circuit.png](circuit.png))
+<img src="circuit.png"/>
 
 ## Funcionamento
 
