@@ -41,14 +41,15 @@ void setup() {
 void loop() {
   
   int valorLDR = analogRead(pinoLDR);
-  int valorSensorHumidade = analogRead(pinoSensorHumidade);
+  int valorSensorHumidade = analogRead(pinoSensorHumidade)/10.23;
   float valorTemp = analogRead(pinoTemp) * 0.48875; 
   lcd.clear();
 
   
-  Serial.print("Luminosidade: ");
-  Serial.println(valorLDR);
-  if (valorLDR < 850) {     
+  lcd.print("Luminosidade: ");
+  lcd.println(valorLDR);
+  if (valorLDR < 850) {
+    lcd.clear();
     lcd.setCursor(2, 0);
     lcd.print("Luminosidade");
     lcd.setCursor(5, 1);
@@ -56,7 +57,8 @@ void loop() {
     digitalWrite(pinoGreenLED, HIGH);
     digitalWrite(pinoYellowLED, LOW);
     digitalWrite(pinoRedLED, LOW);
-  } else if (valorLDR < 960) {     
+  } else if (valorLDR < 960) {
+    lcd.clear();
     lcd.setCursor(2, 0);
     lcd.print("Ambiente em");
     lcd.setCursor(3, 1);
@@ -64,7 +66,8 @@ void loop() {
     digitalWrite(pinoGreenLED, LOW);
     digitalWrite(pinoYellowLED, HIGH);
     digitalWrite(pinoRedLED, LOW);
-  } else {         
+  } else {
+    lcd.clear();
     lcd.setCursor(3, 0);
     lcd.print("Ambiente");
     lcd.setCursor(5, 1);
@@ -86,17 +89,30 @@ void loop() {
   lcd.print(valorSensorHumidade); 
   lcd.print("%");
   if (valorSensorHumidade<25){//As medidas foram adquiridas após pesquisas, da humidade ideal para manter um vinho de qualidade
+    lcd.clear();
     lcd.setCursor(0, 1);
-    lcd.print("Risco a rolha");
+    lcd.print("Risco ao alimento");
+    digitalWrite(pinoRedLED, HIGH);
+    digitalWrite(pinoBuzzer, HIGH);
+    delay(3000);
+    digitalWrite(pinoBuzzer, LOW);
+    delay(3000);
   }else if(valorSensorHumidade<50){
+    lcd.clear();
     lcd.setCursor(0, 1);
     lcd.print("+Humidade");
   }else if(valorSensorHumidade<75){
+    lcd.clear();
     lcd.setCursor(1, 1);
     lcd.print("Humidade Certa");
   }else{
     lcd.setCursor(0, 1);
     lcd.print("Risco de bolor");
+    digitalWrite(pinoRedLED, HIGH);
+    digitalWrite(pinoBuzzer, HIGH);
+    delay(3000);
+    digitalWrite(pinoBuzzer, LOW);
+    delay(3000);
   }
   delay(2000);
   
@@ -106,17 +122,31 @@ void loop() {
   lcd.print(valorTemp);
   lcd.print(" C");
   if (valorTemp<10){//As medidas foram adquiridas após pesquisas, da temperatura ideal para manter um vinho de qualidade
+    lcd.clear();
     lcd.setCursor(1, 1);
     lcd.print("Aumente a temp");
+    digitalWrite(pinoRedLED, HIGH);
+    digitalWrite(pinoBuzzer, HIGH);
+    delay(3000);
+    digitalWrite(pinoBuzzer, LOW);
+    delay(3000);
   }else if(valorTemp<20){
+    lcd.clear();
     lcd.setCursor(2, 1);
     lcd.print("Temp. ideal");
   }else if (valorTemp<35){    
+    lcd.clear();
     lcd.setCursor(1, 1);
     lcd.print("Abaixe a temp");
   }else{
+    lcd.clear();
     lcd.setCursor(1, 1);
-    lcd.print("Risco ao vinho");
+    lcd.print("Risco ao alimento");
+    digitalWrite(pinoRedLED, HIGH);
+    digitalWrite(pinoBuzzer, HIGH);
+    delay(3000);
+    digitalWrite(pinoBuzzer, LOW);
+    delay(3000);
   }
   delay(2000);
   
